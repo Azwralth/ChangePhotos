@@ -114,10 +114,6 @@ final class DrawingViewController: UIViewController {
     }
 
     private func setupToolPicker() {
-        guard let window = view.window ?? UIApplication.shared.windows.first(where: { $0.isKeyWindow }) else {
-            return
-        }
-
         toolPicker.setVisible(true, forFirstResponder: canvasView)
         toolPicker.addObserver(canvasView)
 
