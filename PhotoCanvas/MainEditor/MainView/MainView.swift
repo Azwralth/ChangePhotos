@@ -6,20 +6,27 @@
 
 import SwiftUI
 
+enum ActiveAlert: Identifiable {
+    case delete, save
+
+    var id: Int {
+        hashValue
+    }
+}
+
 struct MainView: View {
     @State private var image: UIImage?
     @State private var showSelection = false
     @State private var pickerSourceType: UIImagePickerController.SourceType?
-    @State private var ciFileterShow: Bool = false
+    @State private var ciFileterShow = false
     @State private var mgRShow = false
     @State private var textShow = false
     @State private var penShow = false
-    @State private var isPresented = false
-    
+    @State private var activeAlert: ActiveAlert?
+
     var body: some View {
         NavigationStack {
             VStack {
-                
                 Spacer()
                 
                 if let image {
@@ -46,7 +53,7 @@ struct MainView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     if image != nil {
                         Button {
-                            isPresented.toggle()
+                            activeAlert = .delete
                         } label: {
                             Image(systemName: "trash")
                         }
@@ -69,17 +76,31 @@ struct MainView: View {
                 }
             }
         }
-        .alert(isPresented: $isPresented) {
-            Alert(
-                title: Text("Удаление фотографии"),
-                message: Text("Вы действительно хотите удалить фотографию?"),
-                primaryButton: .destructive(Text("Удалить")) {
-                    withAnimation {
-                        image = nil
-                    }
-                },
-                secondaryButton: .cancel(Text("Отмена"))
-            )
+        .alert(item: $activeAlert) { alert in
+            switch alert {
+            case .delete:
+                return Alert(
+                    title: Text("Удаление фотографии"),
+                    message: Text("Вы действительно хотите удалить фотографию?"),
+                    primaryButton: .destructive(Text("Удалить")) {
+                        withAnimation {
+                            image = nil
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
+            case .save:
+                return Alert(
+                    title: Text("Сохранение фотографии"),
+                    message: Text("Вы хотите сохранить изображение в галерею?"),
+                    primaryButton: .default(Text("Сохранить")) {
+                        if let image {
+                            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
         }
         .confirmationDialog(
             "Выберите источник",
@@ -164,9 +185,7 @@ struct MainView: View {
             .disabled(image == nil)
             
             Button {
-                if let image {
-                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                }
+                activeAlert = .save
             } label: {
                 Image(systemName: "photo.badge.arrow.down")
                     .padding()
@@ -177,3 +196,4 @@ struct MainView: View {
         .padding(.horizontal, 10)
     }
 }
+
