@@ -47,3 +47,18 @@
   </tr>
 </table>
 
+## Add Photo from image picker or camera
+
+Приложение позволяет добавить фотографию двумя способами:
+-  Сделать снимок с помощью камеры
+-  Выбрать изображение из галереи
+
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/user-attachments/assets/f02c04ab-f643-4e85-83df-fb350f6f20cb">
+        <img src="https://github.com/user-attachments/assets/f02c04ab-f643-4e85-83df-fb350f6f20cb" width="200"/>
+      </a>
+    </td>
+  </tr>
+</table>
