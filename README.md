@@ -62,3 +62,64 @@
     </td>
   </tr>
 </table>
+
+## Change Your Photo
+
+После того как фотография добавлена, вы можете использовать различные инструменты для её редактирования:
+
+- **Добавление фильтров**  
+  Приложение предоставляет набор фильтров для изменения атмосферы и стиля изображения. Вы можете выбрать подходящий фильтр для создания нужного визуального эффекта.
+
+- **Рисование**  
+  С помощью инструмента рисования вы можете добавлять элементы прямо на фото — линии, формы и другие графические объекты.
+
+- **Масштабирование и поворот**  
+  Изменяйте размер и ориентацию фотографии с помощью удобных инструментов масштабирования и поворота.
+
+- **Добавление текста**  
+  Добавляйте текстовые надписи с возможностью выбора шрифта, размера и цвета. Это полезно для создания мемов, цитат или подписей.
+
+<table>
+  <tr>
+    <td>
+      <a href="https://github.com/user-attachments/assets/f701da97-7e81-4ef3-b6d3-e98575480949">
+        <img src="https://github.com/user-attachments/assets/f701da97-7e81-4ef3-b6d3-e98575480949" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/user-attachments/assets/a7826d57-432b-46f6-9268-a7c1ba2514be">
+        <img src="https://github.com/user-attachments/assets/a7826d57-432b-46f6-9268-a7c1ba2514be" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/user-attachments/assets/18039390-82d8-4a21-ae03-6c6840823e96">
+        <img src="https://github.com/user-attachments/assets/18039390-82d8-4a21-ae03-6c6840823e96" width="200"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/user-attachments/assets/84f5b4bb-6caa-4a2d-941e-59cc561afbdf">
+        <img src="https://github.com/user-attachments/assets/84f5b4bb-6caa-4a2d-941e-59cc561afbdf" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/user-attachments/assets/58c4a28a-9d8b-4b4e-bb11-48e62120036c">
+        <img src="https://github.com/user-attachments/assets/58c4a28a-9d8b-4b4e-bb11-48e62120036c" width="200"/>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/user-attachments/assets/ab77ded0-4507-44e0-af59-c2fb3821747f">
+        <img src="https://github.com/user-attachments/assets/ab77ded0-4507-44e0-af59-c2fb3821747f" width="200"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="https://github.com/user-attachments/assets/e5874dac-95ee-4ea4-a8f0-85176cab95e0">
+        <img src="https://github.com/user-attachments/assets/e5874dac-95ee-4ea4-a8f0-85176cab95e0" width="200"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
