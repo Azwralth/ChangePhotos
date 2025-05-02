@@ -101,7 +101,6 @@ final class AuthViewModel: ObservableObject {
             isAuthenticated = true
         } catch {
             print("Google Sign-In error: \(error.localizedDescription)")
-            // Можно добавить алерт-переменную и отобразить ошибку в интерфейсе
         }
     }
 
