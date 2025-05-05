@@ -94,6 +94,7 @@ final class AuthViewModel: ObservableObject {
         }
     }
     
+    @MainActor
     func signInWithGoogle() async {
         do {
             let result = try await authManager.signInWithGoogle()

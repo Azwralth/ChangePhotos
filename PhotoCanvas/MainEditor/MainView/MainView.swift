@@ -34,7 +34,7 @@ struct MainView: View {
                         .resizable()
                         .scaledToFit()
                 } else {
-                    Text("Нет изображения")
+                    Text("No image")
                         .foregroundColor(.gray)
                         .font(.caption)
                         .padding()
@@ -80,9 +80,9 @@ struct MainView: View {
             switch alert {
             case .delete:
                 return Alert(
-                    title: Text("Удаление фотографии"),
-                    message: Text("Вы действительно хотите удалить фотографию?"),
-                    primaryButton: .destructive(Text("Удалить")) {
+                    title: Text("Delete Photo"),
+                    message: Text("Are you sure you want to delete this photo?"),
+                    primaryButton: .destructive(Text("Delete")) {
                         withAnimation {
                             image = nil
                         }
@@ -91,9 +91,9 @@ struct MainView: View {
                 )
             case .save:
                 return Alert(
-                    title: Text("Сохранение фотографии"),
-                    message: Text("Вы хотите сохранить изображение в галерею?"),
-                    primaryButton: .default(Text("Сохранить")) {
+                    title: Text("Save Photo"),
+                    message: Text("Do you want to save this image to your gallery?"),
+                    primaryButton: .default(Text("Save")) {
                         if let image {
                             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
                         }
@@ -103,17 +103,18 @@ struct MainView: View {
             }
         }
         .confirmationDialog(
-            "Выберите источник",
+            "Select source",
             isPresented: $showSelection,
             titleVisibility: .visible
         ) {
-            Button("Сделать фото") {
+            Button("Take a photo") {
                 pickerSourceType = .camera
             }
-            Button("Выбрать из галереи") {
+            Button("Choose from gallery") {
                 pickerSourceType = .photoLibrary
             }
         }
+
         .fullScreenCover(item: $pickerSourceType) { type in
             UIImagePickerRepresentable(
                 sourceType: type,
