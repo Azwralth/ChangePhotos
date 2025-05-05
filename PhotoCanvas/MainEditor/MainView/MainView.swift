@@ -62,15 +62,7 @@ struct MainView: View {
                 
                 ToolbarItem(placement: .topBarLeading) {
                     if let image {
-                        ShareLink(
-                            item: image,
-                            preview: SharePreview(
-                                "Example Image",
-                                image: Image(uiImage: image)
-                            )
-                        ) {
-                            Label("Share Image", systemImage: "square.and.arrow.up")
-                        }
+                        ShareImage(image: image)
                         .padding()
                     }
                 }
